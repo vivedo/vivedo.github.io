@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+
+    background-color: rgb(41, 41, 41);
+    color: white;
+
+    margin: 10px;
+}
+
+a, .clickable {
+    color: rgb(0, 201, 0);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a:hover, .clickable:hover {
+    color: rgb(0, 167, 0);
+}
+
+.frame {
+    height: 100%;
+    width: 100%;
+    border: 10px solid white;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.fn {
+    font-weight: 700;
+}
+
+.fn:after {
+    display: block;
+    height: 5px;
+    width: 100%;
+    content: "";
+    background: linear-gradient(90deg, 
+        #009247, 
+        #009247 33%, 
+        #f1f2f1 33%,
+        #f1f2f1 66%,
+        #ce2b36 66%,
+        #ce2b36 100%);
+}
+
+.fn .first{
+    display: inline-block;
+    color: rgb(41, 41, 41);
+    background-color: white;
+    height: 80px;
+    width: 80px;
+    text-align: right;
+    line-height: 80px;
+}
+
+.fn .nn {
+    font-size: 28px;
+    color: #aaa;
+}
+
+.fn .nn:before {
+    content: "/";
+    font-size: 28px;
+    font-weight: 400;
+    color: #444;
+    margin: 0 10px;
+}
+
+@media only screen and (max-width: 640px) {
+    .fn {
+        font-size: 24px;
+    }
+
+    .fn .first {
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+    }
+
+    .fn .nn {
+        font-size: 20px;
+    }
+}
+
+.g {
+    color: rgb(0, 201, 0);
+}
+
+p {
+    text-align: justify;
+}
+
+h5 {
+    margin-bottom: 10px;
+}
+
+small.clickable {
+    font-size: 14px;
+}
+
+.dd {
+    background-color: rgb(27, 27, 27);
+    padding: 10px;
+}
+
+.dd i {
+    color: grey;
+}
+
+.closed {
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+}
+
+#studies-dd > div {
+    display: flex;
+    flex-direction: row;
+}
+
+#studies-dd i {
+    margin-left: 10px;
+}
