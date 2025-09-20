@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+:root {
+    --color-dark-bg: #191A19;
+    --color-dark-green: #1E5128;
+    --color-green: #4E9F3D;
+    --color-light-green: #D8E9A8;
+}
+
+body {
+    /*background: linear-gradient(135deg, var(--color-dark-bg) 0%, var(--color-dark-green) 100%), url('../assets/background.svg') repeat top left;*/
+    /*background-blend-mode: overlay;*/
+
+    background: url('../assets/background.svg') repeat top center, linear-gradient(135deg, var(--color-dark-bg) 0%, var(--color-dark-green) 100%);
+    background-attachment: fixed;
+
+    color: var(--color-light-green);
+
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.color-darg-green {
+    color: var(--color-dark-green);
+}
+
+.color-green {
+    color: var(--color-green);
+}
+
+.color-light-green {
+    color: var(--color-light-green);
+}

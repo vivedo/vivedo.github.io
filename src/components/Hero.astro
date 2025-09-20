@@ -1,0 +1,297 @@
+<section id="about" class="hero">
+    <div class="hero-container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Hey, I'm Edo, <span class="username">vivedo</span></h1>
+                <p class="title">Senior Backend Engineer <span style="display: inline-block"><span style="color: var(--color-dark-green)">@</span> Nearform</span></p>
+                <p class="description">
+                    Backend developer passionate about writing code I truly care about and take pride in 🚀
+                </p>
+
+                <div class="light-mode-toggle">
+                    <button id="lightModeBtn" class="light-mode-btn">
+                        ☀️ Turn light mode on
+                    </button>
+                    <div id="lightModeMessage" class="light-mode-message hidden">
+                        <span class="bug-icon">🐛</span>
+                        <p>Don't be ridiculous, there's no light mode, light attracts bugs!</p>
+                        <button id="resetBtn" class="reset-btn">×</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="image-container">
+                    <img src="/photo.jpg" alt="Edoardo Viviani" class="profile-photo" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 80px 2rem 2rem;
+    }
+
+    .hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .hero-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .hero-text h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--color-light-green);
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+    }
+
+    .username {
+        color: var(--color-green);
+        text-decoration: underline;
+        text-decoration-style: dashed;
+        text-underline-offset: 8px;
+        transition: color 0.2s ease;
+    }
+
+    .username:hover {
+        color: var(--color-light-green);
+    }
+
+    .title {
+        font-size: 1.5rem;
+        color: var(--color-green);
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+
+    .description {
+        font-size: 1.2rem;
+        color: var(--color-light-green);
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        opacity: 0.9;
+    }
+
+    .light-mode-toggle {
+        margin-bottom: 2rem;
+        min-height: 90px;
+        position: relative;
+    }
+
+    .light-mode-btn {
+        background: transparent;
+        border: 1px solid var(--color-green);
+        color: var(--color-green);
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-family: inherit;
+    }
+
+    .light-mode-btn:hover {
+        background: var(--color-green);
+        color: var(--color-dark-bg);
+        transform: translateY(-1px);
+    }
+
+    .light-mode-message {
+        background: var(--color-dark-green);
+        border: 1px solid var(--color-green);
+        border-radius: 8px;
+        padding: 1rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        animation: fadeInUp 0.3s ease;
+    }
+
+    .light-mode-message.hidden {
+        display: none;
+    }
+
+    .bug-icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .light-mode-message p {
+        color: var(--color-light-green);
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+
+    .reset-btn {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        background: none;
+        border: none;
+        color: var(--color-light-green);
+        font-size: 1.2rem;
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.2s ease;
+    }
+
+    .reset-btn:hover {
+        background: rgba(216, 233, 168, 0.1);
+        color: var(--color-green);
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes glowPulse {
+        0%, 100% {
+            box-shadow:
+                0 0 5px var(--color-green),
+                0 0 10px var(--color-green),
+                0 0 15px var(--color-green);
+        }
+        50% {
+            box-shadow:
+                0 0 10px var(--color-green),
+                0 0 20px var(--color-green),
+                0 0 30px var(--color-green);
+        }
+    }
+
+    .hero-image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .image-container {
+        width: 300px;
+        height: 300px;
+        border: 2px dashed var(--color-green);
+        border-radius: 50%;
+        padding: 15px;
+        position: relative;
+        transition: border-color 0.2s ease;
+    }
+
+    .image-container:hover {
+        border-color: var(--color-light-green);
+    }
+
+    .image-container::before {
+        content: '';
+        position: absolute;
+        inset: 15px;
+        background: var(--color-dark-green);
+        border-radius: 50%;
+        opacity: 0.3;
+        mix-blend-mode: multiply;
+        transition: opacity 0.2s ease;
+        pointer-events: none;
+    }
+
+    .image-container:hover::before {
+        opacity: 0;
+    }
+
+    .profile-photo {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        animation: glowPulse 2s ease-in-out infinite;
+    }
+
+    .image-container:hover .profile-photo {
+        animation-play-state: paused;
+    }
+
+    @media (max-width: 968px) {
+        .hero-content {
+            grid-template-columns: 1fr;
+            gap: 0;
+            text-align: center;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+        }
+
+        .description {
+            max-width: none;
+        }
+
+        .image-container {
+            width: 250px;
+            height: 250px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero {
+            padding: 80px 1rem 2rem;
+        }
+
+        .hero-text h1 {
+            font-size: 2rem;
+        }
+
+        .description {
+            font-size: 1rem;
+        }
+    }
+
+    @media(hover: none) {
+        .image-container::before {
+            display: none;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const lightModeBtn = document.getElementById('lightModeBtn');
+        const lightModeMessage = document.getElementById('lightModeMessage');
+        const resetBtn = document.getElementById('resetBtn');
+
+        lightModeBtn?.addEventListener('click', function() {
+            lightModeBtn.style.display = 'none';
+            lightModeMessage?.classList.remove('hidden');
+        });
+
+        resetBtn?.addEventListener('click', function() {
+            lightModeMessage?.classList.add('hidden');
+            if (lightModeBtn) {
+                lightModeBtn.style.display = 'inline-block';
+            }
+        });
+    });
+</script>
